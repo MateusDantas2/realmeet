@@ -190,8 +190,8 @@
                             <apiPackage>${api.path}.api.facade</apiPackage>
                             <configOptions>
                                 <interfaceOnly>true</interfaceOnly>
-                                <dateLibrary>java8</dateLibrary>
-                                <java8>true</java8>
+                                <dateLibrary>java17</dateLibrary>
+                                <java17>true</java17>
                                 <async>true</async>
                                 <serializableModel>true</serializableModel>
                                 <configPackage>${api.path}.api.config</configPackage>
