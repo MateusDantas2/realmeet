@@ -54,12 +54,12 @@
                             <apiPackage>${api.path}.api.facade</apiPackage>
                             <configOptions>
                                 <async>true</async>
-                                <java8>true</java8>
+                                <java17>true</java17>
                                 <serializableModel>true</serializableModel>
                                 <configPackage>${api.path}.api.config</configPackage>
                                 <classpathTargetSpec>${openapi-spec.classpath}</classpathTargetSpec>
                                 <isCorsEnabled>true</isCorsEnabled>
-                                <dateLibrary>java8</dateLibrary>
+                                <dateLibrary>java17</dateLibrary>
                             </configOptions>
                         </configuration>
                     </execution>
