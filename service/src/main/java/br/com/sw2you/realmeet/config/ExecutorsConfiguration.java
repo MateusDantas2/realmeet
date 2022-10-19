@@ -19,11 +19,11 @@ public class ExecutorsConfiguration {
         @Value("${realmeet.taskExecutor.pool.keepAliveSeconds:60}") int keepAliveSeconds
     ) {
         return new ThreadPoolExecutor(
-                corePoolSize,
-                maxPoolSize,
-                keepAliveSeconds,
-                TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(queueCapacity, true)
+            corePoolSize,
+            maxPoolSize,
+            keepAliveSeconds,
+            TimeUnit.SECONDS,
+            new ArrayBlockingQueue<>(queueCapacity, true)
         );
     }
 }

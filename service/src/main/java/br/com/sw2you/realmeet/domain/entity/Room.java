@@ -8,20 +8,20 @@ import javax.persistence.*;
 @Entity
 @Table(name = "room")
 public class Room {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "name", nullable = false)
     private String name;
+
     @Column(name = "seats", nullable = false)
     private Integer seats;
+
     @Column(name = "active", nullable = false)
     private Boolean active;
 
-    public Room() {
-
-    }
+    public Room() {}
 
     private Room(Long id, String name, Integer seats, Boolean active) {
         this.id = id;
@@ -73,32 +73,20 @@ public class Room {
 
     @Override
     public String toString() {
-        return (
-            "Room{" +
-            "id=" +
-            id +
-            ", name='" +
-            name +
-            '\'' +
-            ", seats=" +
-            seats +
-            ", active=" +
-            active +
-            '}'
-        );
+        return ("Room{" + "id=" + id + ", name='" + name + '\'' + ", seats=" + seats + ", active=" + active + '}');
     }
 
     public static Builder newBuilder() {
         return new Builder();
     }
+
     public static final class Builder {
         private Long id;
         private String name;
         private Integer seats;
         private Boolean active;
 
-        private Builder() {
-        }
+        private Builder() {}
 
         public Builder id(Long id) {
             this.id = id;

@@ -20,6 +20,7 @@ public class RoomController implements RoomsApi {
         this.roomService = roomService;
         this.controllersExecutor = controllersExecutor;
     }
+
     @Override
     public CompletableFuture<ResponseEntity<RoomDTO>> getRoom(Long id) {
         //return supplyAsync(() -> ResponseEntity.ok(roomService.getRoom(id)));
