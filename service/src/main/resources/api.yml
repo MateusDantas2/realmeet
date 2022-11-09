@@ -32,18 +32,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseError'
+
+  /rooms:
+    post:
+      summary: 'Creates a room'
+      operationId: createRoom
+      tags:
+        - room
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRoomDTO'
+        required: true
+      responses:
+        201:
+          description: 'Created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomDTO'
+        422:
+          $ref: '#/components/responses/UnprocessableEntity'
+
 components:
   schemas:
-    RoomDTO:
+    CreateRoomDTO:
       type: object
       properties:
-        id:
-          type: integer
-          format: int64
         name:
           type: string
         seats:
           type: integer
+
+    RoomDTO:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CreateRoomDTO'
+        - type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+
     ResponseError:
       type: object
       required:
@@ -57,3 +88,8 @@ components:
           type: string
         message:
           type: string
+
+  responses:
+    UnprocessableEntity:
+      description: O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição
+        está correta, mas não foi possível processar as instruções presentes.

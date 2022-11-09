@@ -10,4 +10,8 @@ public final class ResponseEntityUtils {
     public static <T> ResponseEntity<T> ok(T body) {
         return ResponseEntity.status(HttpStatus.OK).body(body);
     }
+
+    public static <T> ResponseEntity<T> created(T body) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(body);
+    }
 }
