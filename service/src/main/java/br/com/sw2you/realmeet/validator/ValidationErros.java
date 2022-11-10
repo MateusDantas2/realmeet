@@ -8,7 +8,7 @@ import org.springframework.data.util.Streamable;
 public class ValidationErros implements Streamable<ValidationError> {
     private final List<ValidationError> validationErrorList;
 
-    public ValidationErros(List<ValidationError> validationErrorList) {
+    public ValidationErros() {
         this.validationErrorList = new ArrayList<>();
     }
 
