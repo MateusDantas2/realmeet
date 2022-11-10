@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class RoomService {
     private final RoomRepository roomRepository;
-    private final RoomValidator roomValidator;
     private final RoomMapper roomMapper;
+    private final RoomValidator roomValidator;
 
     public RoomService(RoomRepository roomRepository, RoomValidator roomValidator, RoomMapper roomMapper) {
         this.roomRepository = roomRepository;
