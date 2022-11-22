@@ -33,8 +33,10 @@ public class RoomService {
 
     public RoomDTO createRoom(CreateRoomDTO createRoomDTO) {
         roomValidator.validate(createRoomDTO);
+        //        var room = Room.newBuilder().seats(createRoomDTO.getSeats()).name(createRoomDTO.getName()).build();
         var room = roomMapper.fromCreateRoomDtoToEntity(createRoomDTO);
         roomRepository.save(room);
+        //        return new RoomDTO().id(room.getId()).seats(room.getSeats()).name(room.getName())
         return roomMapper.fromEntityToDto(room);
     }
 }

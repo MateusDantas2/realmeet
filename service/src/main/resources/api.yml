@@ -78,21 +78,18 @@ components:
     ResponseError:
       type: object
       required:
-        - field
-        - errorCode
+        - code
+        - message
       properties:
-        field:
+        code:
+          type: integer
+          format: int32
+        status:
           type: string
-        errorCode:
+        message:
           type: string
 
   responses:
     UnprocessableEntity:
       description: O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição
         está correta, mas não foi possível processar as instruções presentes.
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/ResponseError'
