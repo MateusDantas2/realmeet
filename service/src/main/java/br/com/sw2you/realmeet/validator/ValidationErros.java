@@ -12,8 +12,8 @@ public class ValidationErros implements Streamable<ValidationError> {
         this.validationErrorList = new ArrayList<>();
     }
 
-    public ValidationErros add(String field, String errorCode) {
-        return add(new ValidationError(field, errorCode));
+    public static ValidationError add(String field, String errorCode) {
+        return (new ValidationError(field, errorCode));
     }
 
     public ValidationErros add(ValidationError validationError) {
