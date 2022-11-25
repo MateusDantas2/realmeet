@@ -18,4 +18,8 @@ public final class ResponseEntityUtils {
     public static <T> ResponseEntity<T> notFound() {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
+
+    public static <T> ResponseEntity<T> noContent(Void aVoid) {
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }
