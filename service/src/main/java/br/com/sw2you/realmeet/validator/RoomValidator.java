@@ -2,10 +2,14 @@ package br.com.sw2you.realmeet.validator;
 
 import static br.com.sw2you.realmeet.validator.ValidatorConstants.*;
 import static br.com.sw2you.realmeet.validator.ValidatorUtils.*;
+import static java.util.Objects.isNull;
 
 import br.com.sw2you.realmeet.api.model.CreateRoomDTO;
+import br.com.sw2you.realmeet.api.model.UpdateRoomDTO;
 import br.com.sw2you.realmeet.domain.repository.RoomRepository;
 import org.springframework.stereotype.Component;
+
+import java.util.Objects;
 
 @Component
 public class RoomValidator {
@@ -22,7 +26,21 @@ public class RoomValidator {
             validateName(createRoomDTO.getName(), validationErros) &&
             validateSeats(createRoomDTO.getSeats(), validationErros)
         ) {
-            validateNameDuplicate(createRoomDTO.getName(), validationErros);
+            validateNameDuplicate(null, createRoomDTO.getName(), validationErros);
+        }
+
+        throwOnError(validationErros);
+    }
+
+    public void validate(Long roomId, UpdateRoomDTO updateRoomDTO) {
+        var validationErros = new ValidationErros();
+
+        if (
+            validateRequired(roomId, ROOM_ID, validationErros) &&
+            validateName(updateRoomDTO.getName(), validationErros) &&
+            validateSeats(updateRoomDTO.getSeats(), validationErros)
+        ) {
+            validateNameDuplicate(roomId, updateRoomDTO.getName(), validationErros);
         }
 
         throwOnError(validationErros);
@@ -43,9 +61,13 @@ public class RoomValidator {
         );
     }
 
-    private void validateNameDuplicate(String name, ValidationErros validationErros) {
+    private void validateNameDuplicate(Long roomIdToExclude, String name, ValidationErros validationErros) {
         roomRepository
             .findByNameAndActive(name, true)
-            .ifPresent(__ -> validationErros.add(ROOM_NAME, ROOM_SEATS + DUPLICATE));
+            .ifPresent(room -> {
+                if (!isNull(roomIdToExclude) && !Objects.equals(room.getId(), roomIdToExclude)) {
+                    validationErros.add(ROOM_NAME, ROOM_SEATS + DUPLICATE);
+                }
+            });
     }
 }

@@ -46,6 +46,7 @@ public class RoomService {
 
     @Transactional
     public void updateRoom(Long roomId, UpdateRoomDTO updateRoomDTO) {
+        roomValidator.validate(roomId, updateRoomDTO);
         getActiveRoomOrThrow(roomId);
         roomRepository.updateRoom(roomId, updateRoomDTO.getName(), updateRoomDTO.getSeats());
     }
