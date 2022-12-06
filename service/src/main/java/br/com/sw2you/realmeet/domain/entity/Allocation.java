@@ -13,13 +13,20 @@ public class Allocation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "room_id")
     private Room room;
     private Employee employee;
+    @Column(name = "subject")
     private String subject;
+    @Column(name = "start_at")
     private OffsetDateTime startAt;
+    @Column(name = "end_at")
     private OffsetDateTime endAt;
+    @Column(name = "created_at")
     private OffsetDateTime createdAt;
-    private OffsetDateTime updateAt;
+    @Column(name = "updated_at")
+    private OffsetDateTime updatedAt;
 
     private Allocation(Builder builder) {
         id = builder.id;
@@ -29,7 +36,7 @@ public class Allocation {
         startAt = builder.startAt;
         endAt = builder.endAt;
         createdAt = builder.createdAt;
-        updateAt = builder.updateAt;
+        updatedAt = builder.updateAt;
     }
 
     public Allocation() {
@@ -65,7 +72,7 @@ public class Allocation {
     }
 
     public OffsetDateTime getUpdateAt() {
-        return updateAt;
+        return updatedAt;
     }
 
     @Override
@@ -80,12 +87,12 @@ public class Allocation {
                 Objects.equals(startAt, that.startAt) &&
                 Objects.equals(endAt, that.endAt) &&
                 Objects.equals(createdAt, that.createdAt) &&
-                Objects.equals(updateAt, that.updateAt);
+                Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, room, employee, subject, startAt, endAt, createdAt, updateAt);
+        return Objects.hash(id, room, employee, subject, startAt, endAt, createdAt, updatedAt);
     }
 
     @Override
@@ -98,7 +105,7 @@ public class Allocation {
                 ", startAt=" + startAt +
                 ", endAt=" + endAt +
                 ", createdAt=" + createdAt +
-                ", updateAt=" + updateAt +
+                ", updateAt=" + updatedAt +
                 '}';
     }
 
