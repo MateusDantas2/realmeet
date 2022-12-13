@@ -97,6 +97,28 @@ paths:
         422:
           $ref: '#/components/responses/UnprocessableEntity'
 
+  /allocations:
+    post:
+      summary: 'Creates an allocation'
+      operationId: createAllocation
+      tags:
+        - allocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAllocationDTO'
+        required: true
+      responses:
+        201:
+          description: 'Created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AllocationDTO'
+        422:
+          $ref: '#/components/responses/UnprocessableEntity'
+
 components:
   schemas:
     UpdateRoomDTO:
@@ -116,6 +138,35 @@ components:
       type: object
       allOf:
         - $ref: '#/components/schemas/CreateRoomDTO'
+        - type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+
+    CreateAllocationDTO:
+      type: object
+      properties:
+        subject:
+          type: string
+        startAt:
+          type: string
+          format: date-time
+        endAt:
+          type: string
+          format: date-time
+        roomId:
+          type: integer
+          format: int64
+        employeeName:
+          type: string
+        employeeEmail:
+          type: string
+
+    AllocationDTO:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CreateAllocationDTO'
         - type: object
           properties:
             id:
