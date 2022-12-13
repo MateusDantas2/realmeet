@@ -1,30 +1,36 @@
 package br.com.sw2you.realmeet.domain.entity;
 
 import br.com.sw2you.realmeet.domain.model.Employee;
-
-import javax.persistence.*;
 import java.time.OffsetDateTime;
 import java.util.Objects;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "allocation")
 public class Allocation {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
+
+    @Embedded
     private Employee employee;
+
     @Column(name = "subject")
     private String subject;
+
     @Column(name = "start_at")
     private OffsetDateTime startAt;
+
     @Column(name = "end_at")
     private OffsetDateTime endAt;
+
     @Column(name = "created_at")
     private OffsetDateTime createdAt;
+
     @Column(name = "updated_at")
     private OffsetDateTime updatedAt;
 
@@ -39,9 +45,7 @@ public class Allocation {
         updatedAt = builder.updateAt;
     }
 
-    public Allocation() {
-
-    }
+    public Allocation() {}
 
     public Long getId() {
         return id;
@@ -80,14 +84,16 @@ public class Allocation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Allocation that = (Allocation) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(room, that.room) &&
-                Objects.equals(employee, that.employee) &&
-                Objects.equals(subject, that.subject) &&
-                Objects.equals(startAt, that.startAt) &&
-                Objects.equals(endAt, that.endAt) &&
-                Objects.equals(createdAt, that.createdAt) &&
-                Objects.equals(updatedAt, that.updatedAt);
+        return (
+            Objects.equals(id, that.id) &&
+            Objects.equals(room, that.room) &&
+            Objects.equals(employee, that.employee) &&
+            Objects.equals(subject, that.subject) &&
+            Objects.equals(startAt, that.startAt) &&
+            Objects.equals(endAt, that.endAt) &&
+            Objects.equals(createdAt, that.createdAt) &&
+            Objects.equals(updatedAt, that.updatedAt)
+        );
     }
 
     @Override
@@ -97,16 +103,27 @@ public class Allocation {
 
     @Override
     public String toString() {
-        return "Allocation{" +
-                "id=" + id +
-                ", room=" + room +
-                ", employee=" + employee +
-                ", subject='" + subject + '\'' +
-                ", startAt=" + startAt +
-                ", endAt=" + endAt +
-                ", createdAt=" + createdAt +
-                ", updateAt=" + updatedAt +
-                '}';
+        return (
+            "Allocation{" +
+            "id=" +
+            id +
+            ", room=" +
+            room +
+            ", employee=" +
+            employee +
+            ", subject='" +
+            subject +
+            '\'' +
+            ", startAt=" +
+            startAt +
+            ", endAt=" +
+            endAt +
+            ", createdAt=" +
+            createdAt +
+            ", updateAt=" +
+            updatedAt +
+            '}'
+        );
     }
 
     public static Builder newBuilder() {
@@ -123,8 +140,7 @@ public class Allocation {
         private OffsetDateTime createdAt;
         private OffsetDateTime updateAt;
 
-        private Builder() {
-        }
+        private Builder() {}
 
         public Builder withId(Long id) {
             this.id = id;
