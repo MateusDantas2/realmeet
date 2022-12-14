@@ -20,8 +20,8 @@ public class RoomController implements RoomsApi {
     private final RoomService roomService;
 
     public RoomController(Executor controllersExecutor, RoomService roomService) {
-        this.roomService = roomService;
         this.controllersExecutor = controllersExecutor;
+        this.roomService = roomService;
     }
 
     @Override
