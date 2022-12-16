@@ -118,6 +118,8 @@ paths:
                 $ref: '#/components/schemas/AllocationDTO'
         422:
           $ref: '#/components/responses/UnprocessableEntity'
+        404:
+          description: Not Found
 
 components:
   schemas:
