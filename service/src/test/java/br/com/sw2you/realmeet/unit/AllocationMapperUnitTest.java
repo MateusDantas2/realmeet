@@ -1,8 +1,7 @@
 package br.com.sw2you.realmeet.unit;
 
 import static br.com.sw2you.realmeet.utils.MapperUtils.allocationMapper;
-import static br.com.sw2you.realmeet.utils.TestDataCreator.newCreateAllocationDTO;
-import static br.com.sw2you.realmeet.utils.TestDataCreator.newRoomBuilder;
+import static br.com.sw2you.realmeet.utils.TestDataCreator.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -30,5 +29,18 @@ class AllocationMapperUnitTest extends BaseUnitTeste {
         assertEquals(createAllocationDTO.getEmployeeEmail(), allocation.getEmployee().getEmail());
         assertEquals(createAllocationDTO.getStartAt(), allocation.getStartAt());
         assertEquals(createAllocationDTO.getEndAt(), allocation.getEndAt());
+    }
+
+    @Test
+    void testFromEntityToAllocationDTO() {
+        var allocation = newAllocationBuilder(newRoomBuilder().build()).build();
+        var allocationDTO = victim.fromEntityToAllocationDTO(allocation);
+
+        assertEquals(allocation.getSubject(), allocationDTO.getSubject());
+        assertEquals(allocation.getId(), allocationDTO.getId());
+        assertEquals(allocation.getEmployee().getName(), allocationDTO.getEmployeeName());
+        assertEquals(allocation.getEmployee().getEmail(), allocationDTO.getEmployeeEmail());
+        assertEquals(allocation.getStartAt(), allocationDTO.getStartAt());
+        assertEquals(allocation.getEndAt(), allocationDTO.getEndAt());
     }
 }

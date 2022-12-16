@@ -142,42 +142,42 @@ public class Allocation {
 
         private Builder() {}
 
-        public Builder withId(Long id) {
+        public Builder id(Long id) {
             this.id = id;
             return this;
         }
 
-        public Builder withRoom(Room room) {
+        public Builder room(Room room) {
             this.room = room;
             return this;
         }
 
-        public Builder withEmployee(Employee employee) {
+        public Builder employee(Employee employee) {
             this.employee = employee;
             return this;
         }
 
-        public Builder withSubject(String subject) {
+        public Builder subject(String subject) {
             this.subject = subject;
             return this;
         }
 
-        public Builder withStartAt(OffsetDateTime startAt) {
+        public Builder startAt(OffsetDateTime startAt) {
             this.startAt = startAt;
             return this;
         }
 
-        public Builder withEndAt(OffsetDateTime endAt) {
+        public Builder endAt(OffsetDateTime endAt) {
             this.endAt = endAt;
             return this;
         }
 
-        public Builder withCreatedAt(OffsetDateTime createdAt) {
+        public Builder createdAt(OffsetDateTime createdAt) {
             this.createdAt = createdAt;
             return this;
         }
 
-        public Builder withUpdateAt(OffsetDateTime updateAt) {
+        public Builder updateAt(OffsetDateTime updateAt) {
             this.updateAt = updateAt;
             return this;
         }
