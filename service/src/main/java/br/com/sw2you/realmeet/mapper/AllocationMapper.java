@@ -18,5 +18,6 @@ public abstract class AllocationMapper {
 
     @Mapping(source = "employee.name", target = "employeeName")
     @Mapping(source = "employee.email", target = "employeeEmail")
+    @Mapping(source = "room.id", target = "roomId")
     public abstract AllocationDTO fromEntityToAllocationDTO(Allocation allocation);
 }
