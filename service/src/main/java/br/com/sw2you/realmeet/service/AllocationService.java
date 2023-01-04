@@ -6,8 +6,14 @@ import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
 import br.com.sw2you.realmeet.domain.repository.RoomRepository;
 import br.com.sw2you.realmeet.exception.RoomNotFoundException;
 import br.com.sw2you.realmeet.mapper.AllocationMapper;
+import br.com.sw2you.realmeet.util.ResponseEntityUtils;
 import br.com.sw2you.realmeet.validator.AllocationValidator;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.CompletableFuture;
+
+import static java.util.concurrent.CompletableFuture.runAsync;
 
 @Service
 public class AllocationService {
@@ -37,5 +43,9 @@ public class AllocationService {
         var allocation = allocationMapper.fromCreateAllocationDTOToEntity(createAllocationDTO, room);
         allocationRepository.save(allocation);
         return allocationMapper.fromEntityToAllocationDTO(allocation);
+    }
+
+    public void deleteAllocation(Long id) {
+
     }
 }

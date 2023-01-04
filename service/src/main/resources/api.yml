@@ -3,7 +3,7 @@ info:
   version: 1.0.0
   title: realmeet
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'http://localhost:3306'
 paths:
   /rooms/{id}:
     get:
@@ -118,6 +118,25 @@ paths:
                 $ref: '#/components/schemas/AllocationDTO'
         422:
           $ref: '#/components/responses/UnprocessableEntity'
+        404:
+          description: Not Found
+
+    delete:
+      summary: 'Deletes an allocation by ID'
+      operationId: deleteAllocation
+      tags:
+        - allocation
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the allocation
+          schema:
+            type: integer
+            format: int64
+      responses:
+        204:
+          description: 'Deleted Successfully'
         404:
           description: Not Found
 
