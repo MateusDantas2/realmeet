@@ -77,7 +77,10 @@ class AllocationApiIntegrationTest extends BaseIntegrationTest {
                 .build()
         );
 
-        assertThrows(HttpClientErrorException.UnprocessableEntity.class, () -> api.deleteAllocation(allocation.getId()));
+        assertThrows(
+            HttpClientErrorException.UnprocessableEntity.class,
+            () -> api.deleteAllocation(allocation.getId())
+        );
     }
 
     @Test
