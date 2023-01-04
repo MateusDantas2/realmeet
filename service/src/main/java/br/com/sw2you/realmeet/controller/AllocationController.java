@@ -32,6 +32,6 @@ public class AllocationController implements AllocationsApi {
     @Override
     public CompletableFuture<ResponseEntity<Void>> deleteAllocation(Long id) {
         return runAsync(() -> allocationService.deleteAllocation(id), controllersExecutor)
-                .thenApply(ResponseEntityUtils::noContent);
+            .thenApply(ResponseEntityUtils::noContent);
     }
 }

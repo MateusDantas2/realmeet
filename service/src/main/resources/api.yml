@@ -120,7 +120,7 @@ paths:
           $ref: '#/components/responses/UnprocessableEntity'
         404:
           description: Not Found
-
+  /allocations/{id}:
     delete:
       summary: 'Deletes an allocation by ID'
       operationId: deleteAllocation

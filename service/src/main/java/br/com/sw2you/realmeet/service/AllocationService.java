@@ -1,5 +1,8 @@
 package br.com.sw2you.realmeet.service;
 
+import static br.com.sw2you.realmeet.util.DateUtils.*;
+import static java.util.concurrent.CompletableFuture.runAsync;
+
 import br.com.sw2you.realmeet.api.model.AllocationDTO;
 import br.com.sw2you.realmeet.api.model.CreateAllocationDTO;
 import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
@@ -11,14 +14,10 @@ import br.com.sw2you.realmeet.mapper.AllocationMapper;
 import br.com.sw2you.realmeet.util.DateUtils;
 import br.com.sw2you.realmeet.util.ResponseEntityUtils;
 import br.com.sw2you.realmeet.validator.AllocationValidator;
+import java.util.concurrent.CompletableFuture;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.concurrent.CompletableFuture;
-
-import static br.com.sw2you.realmeet.util.DateUtils.*;
-import static java.util.concurrent.CompletableFuture.runAsync;
 
 @Service
 public class AllocationService {
@@ -52,8 +51,8 @@ public class AllocationService {
 
     public void deleteAllocation(Long allocationId) {
         var allocation = allocationRepository
-                .findById(allocationId)
-                .orElseThrow(() -> new AllocationNotFoundException("Allocation not found: " + allocationId));
+            .findById(allocationId)
+            .orElseThrow(() -> new AllocationNotFoundException("Allocation not found: " + allocationId));
 
         if (allocation.getEndAt().isBefore(now())) {
             throw new AllocationCannotBeDeleteException();
