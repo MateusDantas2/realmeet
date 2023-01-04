@@ -1,15 +1,14 @@
 package br.com.sw2you.realmeet.validator;
 
-import br.com.sw2you.realmeet.api.model.CreateAllocationDTO;
-import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
-import org.springframework.stereotype.Component;
-
-import java.time.Duration;
-import java.time.OffsetDateTime;
-
 import static br.com.sw2you.realmeet.util.DateUtils.now;
 import static br.com.sw2you.realmeet.validator.ValidatorConstants.*;
 import static br.com.sw2you.realmeet.validator.ValidatorUtils.*;
+
+import br.com.sw2you.realmeet.api.model.CreateAllocationDTO;
+import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
+import java.time.Duration;
+import java.time.OffsetDateTime;
+import org.springframework.stereotype.Component;
 
 @Component
 public class AllocationValidator {
@@ -36,14 +35,17 @@ public class AllocationValidator {
 
     private void validateEmployeeName(String employeeName, ValidationErros validationErros) {
         validateRequired(employeeName, ALLOCATION_EMPLOYEE_NAME, validationErros);
-        validateMaxLength(employeeName, ALLOCATION_EMPLOYEE_NAME,
-                    ALLOCATION_EMPLOYEE_NAME_MAX_LENGTH, validationErros);
+        validateMaxLength(employeeName, ALLOCATION_EMPLOYEE_NAME, ALLOCATION_EMPLOYEE_NAME_MAX_LENGTH, validationErros);
     }
 
     private void validateEmployeeEmail(String employeeEmail, ValidationErros validationErros) {
         validateRequired(employeeEmail, ALLOCATION_EMPLOYEE_EMAIL, validationErros);
-        validateMaxLength(employeeEmail,ALLOCATION_EMPLOYEE_EMAIL,
-                ALLOCATION_EMPLOYEE_EMAIL_MAX_LENGTH, validationErros);
+        validateMaxLength(
+            employeeEmail,
+            ALLOCATION_EMPLOYEE_EMAIL,
+            ALLOCATION_EMPLOYEE_EMAIL_MAX_LENGTH,
+            validationErros
+        );
     }
 
     private void validateDates(OffsetDateTime startAt, OffsetDateTime endAt, ValidationErros validationErros) {
@@ -55,8 +57,7 @@ public class AllocationValidator {
         }
     }
 
-    private boolean validateDatesPresent
-    (
+    private boolean validateDatesPresent(
         OffsetDateTime startAt,
         OffsetDateTime endAt,
         ValidationErros validationErros
@@ -67,12 +68,7 @@ public class AllocationValidator {
         );
     }
 
-    private void validateDateOrdering
-        (
-            OffsetDateTime startAt,
-            OffsetDateTime endAt,
-            ValidationErros validationErros
-        ) {
+    private void validateDateOrdering(OffsetDateTime startAt, OffsetDateTime endAt, ValidationErros validationErros) {
         if (startAt.isEqual(endAt) || startAt.isAfter(endAt)) {
             validationErros.add(ALLOCATION_START_AT, ALLOCATION_START_AT + INCONSISTENT);
         }
@@ -90,7 +86,11 @@ public class AllocationValidator {
         }
     }
 
-    private void validateIfTimeAvailable(OffsetDateTime startAt, OffsetDateTime endAt, ValidationErros validationErros) {
+    private void validateIfTimeAvailable(
+        OffsetDateTime startAt,
+        OffsetDateTime endAt,
+        ValidationErros validationErros
+    ) {
         //TODO
     }
 }

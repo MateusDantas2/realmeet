@@ -1,7 +1,6 @@
 package br.com.sw2you.realmeet.validator;
 
 public final class ValidatorConstants {
-
     public static final String ROOM_ID = "id";
     public static final String ROOM_NAME = "name";
     public static final int ROOM_NAME_MAX_LENGTH = 20;

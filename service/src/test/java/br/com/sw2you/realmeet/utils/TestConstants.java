@@ -1,10 +1,9 @@
 package br.com.sw2you.realmeet.utils;
 
-import br.com.sw2you.realmeet.util.DateUtils;
-
-import java.time.OffsetDateTime;
-
 import static br.com.sw2you.realmeet.util.DateUtils.now;
+
+import br.com.sw2you.realmeet.util.DateUtils;
+import java.time.OffsetDateTime;
 
 public final class TestConstants {
     public static final long DEFAULT_ROOM_ID = 1L;
