@@ -5,6 +5,8 @@ import static java.util.concurrent.CompletableFuture.runAsync;
 
 import br.com.sw2you.realmeet.api.model.AllocationDTO;
 import br.com.sw2you.realmeet.api.model.CreateAllocationDTO;
+import br.com.sw2you.realmeet.api.model.UpdateAllocationDTO;
+import br.com.sw2you.realmeet.domain.entity.Allocation;
 import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
 import br.com.sw2you.realmeet.domain.repository.RoomRepository;
 import br.com.sw2you.realmeet.exception.AllocationCannotBeDeleteException;
@@ -50,14 +52,30 @@ public class AllocationService {
     }
 
     public void deleteAllocation(Long allocationId) {
-        var allocation = allocationRepository
-            .findById(allocationId)
-            .orElseThrow(() -> new AllocationNotFoundException("Allocation not found: " + allocationId));
+        var allocation = getAllocationOrThrow(allocationId);
 
         if (allocation.getEndAt().isBefore(now())) {
             throw new AllocationCannotBeDeleteException();
         }
 
         allocationRepository.delete(allocation);
+    }
+
+    @Transactional
+    public void updateAllocation(Long allocationId, UpdateAllocationDTO updateAllocationDTO) {
+        getAllocationOrThrow(allocationId);
+
+        allocationRepository.updateAllocation(
+            allocationId,
+            updateAllocationDTO.getSubject(),
+            updateAllocationDTO.getStartAt(),
+            updateAllocationDTO.getEndAt()
+        );
+    }
+
+    private Allocation getAllocationOrThrow(Long allocationId) {
+        return allocationRepository
+            .findById(allocationId)
+            .orElseThrow(() -> new AllocationNotFoundException("Allocation not found: " + allocationId));
     }
 }
