@@ -90,7 +90,5 @@ public class AllocationValidator {
         OffsetDateTime startAt,
         OffsetDateTime endAt,
         ValidationErros validationErros
-    ) {
-        //TODO
-    }
+    ) {}
 }

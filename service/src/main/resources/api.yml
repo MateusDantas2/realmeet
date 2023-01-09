@@ -120,6 +120,7 @@ paths:
           $ref: '#/components/responses/UnprocessableEntity'
         404:
           description: Not Found
+
   /allocations/{id}:
     delete:
       summary: 'Deletes an allocation by ID'
@@ -137,6 +138,33 @@ paths:
       responses:
         204:
           description: 'Deleted Successfully'
+        404:
+          description: Not Found
+        422:
+          $ref: '#/components/responses/UnprocessableEntity'
+
+    put:
+      summary: 'Updates an allocation by ID'
+      operationId: updateAllocation
+      tags:
+        - allocation
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Id of the allocation
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAllocationDTO'
+        required: true
+      responses:
+        204:
+          description: 'Update Successfully'
         404:
           description: Not Found
         422:
@@ -167,7 +195,7 @@ components:
               type: integer
               format: int64
 
-    CreateAllocationDTO:
+    UpdateAllocationDTO:
       type: object
       properties:
         subject:
@@ -178,13 +206,20 @@ components:
         endAt:
           type: string
           format: date-time
-        roomId:
-          type: integer
-          format: int64
-        employeeName:
-          type: string
-        employeeEmail:
-          type: string
+
+    CreateAllocationDTO:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/UpdateAllocationDTO'
+        - type: object
+          properties:
+            roomId:
+              type: integer
+              format: int64
+            employeeName:
+              type: string
+            employeeEmail:
+              type: string
 
     AllocationDTO:
       type: object
