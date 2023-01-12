@@ -5,6 +5,8 @@ import static br.com.sw2you.realmeet.validator.ValidatorConstants.*;
 import static br.com.sw2you.realmeet.validator.ValidatorUtils.*;
 
 import br.com.sw2you.realmeet.api.model.CreateAllocationDTO;
+import br.com.sw2you.realmeet.api.model.UpdateAllocationDTO;
+import br.com.sw2you.realmeet.api.model.UpdateRoomDTO;
 import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
 import java.time.Duration;
 import java.time.OffsetDateTime;
@@ -24,6 +26,16 @@ public class AllocationValidator {
         validateEmployeeName(createAllocationDTO.getEmployeeName(), validationErros);
         validateEmployeeEmail(createAllocationDTO.getEmployeeEmail(), validationErros);
         validateDates(createAllocationDTO.getStartAt(), createAllocationDTO.getEndAt(), validationErros);
+
+        throwOnError(validationErros);
+    }
+
+    public void validate(Long allocationId, UpdateAllocationDTO updateAllocationDTO) {
+        var validationErros = new ValidationErros();
+
+        validateRequired(allocationId, ALLOCATION_ID, validationErros);
+        validateSubject(updateAllocationDTO.getSubject(), validationErros);
+        validateDates(updateAllocationDTO.getStartAt(), updateAllocationDTO.getEndAt(), validationErros);
 
         throwOnError(validationErros);
     }

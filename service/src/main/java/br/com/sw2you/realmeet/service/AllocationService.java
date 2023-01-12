@@ -10,6 +10,7 @@ import br.com.sw2you.realmeet.domain.entity.Allocation;
 import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
 import br.com.sw2you.realmeet.domain.repository.RoomRepository;
 import br.com.sw2you.realmeet.exception.AllocationCannotBeDeleteException;
+import br.com.sw2you.realmeet.exception.AllocationCannotBeUpdatedException;
 import br.com.sw2you.realmeet.exception.AllocationNotFoundException;
 import br.com.sw2you.realmeet.exception.RoomNotFoundException;
 import br.com.sw2you.realmeet.mapper.AllocationMapper;
@@ -54,7 +55,7 @@ public class AllocationService {
     public void deleteAllocation(Long allocationId) {
         var allocation = getAllocationOrThrow(allocationId);
 
-        if (allocation.getEndAt().isBefore(now())) {
+        if (isAllocationInThePast(allocation)) {
             throw new AllocationCannotBeDeleteException();
         }
 
@@ -63,7 +64,13 @@ public class AllocationService {
 
     @Transactional
     public void updateAllocation(Long allocationId, UpdateAllocationDTO updateAllocationDTO) {
-        getAllocationOrThrow(allocationId);
+        var allocation = getAllocationOrThrow(allocationId);
+
+        if (isAllocationInThePast(allocation)) {
+            throw new AllocationCannotBeUpdatedException();
+        }
+
+        allocationValidator.validate(allocationId, updateAllocationDTO);
 
         allocationRepository.updateAllocation(
             allocationId,
@@ -77,5 +84,9 @@ public class AllocationService {
         return allocationRepository
             .findById(allocationId)
             .orElseThrow(() -> new AllocationNotFoundException("Allocation not found: " + allocationId));
+    }
+
+    public boolean isAllocationInThePast(Allocation allocation) {
+        return allocation.getEndAt().isBefore(now());
     }
 }
