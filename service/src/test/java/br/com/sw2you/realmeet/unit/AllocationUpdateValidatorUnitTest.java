@@ -1,5 +1,12 @@
 package br.com.sw2you.realmeet.unit;
 
+import static br.com.sw2you.realmeet.util.DateUtils.now;
+import static br.com.sw2you.realmeet.utils.TestConstants.DEFAULT_ALLOCATION_ID;
+import static br.com.sw2you.realmeet.utils.TestDataCreator.newUpdateAllocationDTO;
+import static br.com.sw2you.realmeet.validator.ValidatorConstants.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import br.com.sw2you.realmeet.core.BaseUnitTeste;
 import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
 import br.com.sw2you.realmeet.exception.InvalidRequestException;
@@ -9,13 +16,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-
-import static br.com.sw2you.realmeet.util.DateUtils.now;
-import static br.com.sw2you.realmeet.utils.TestConstants.DEFAULT_ALLOCATION_ID;
-import static br.com.sw2you.realmeet.utils.TestDataCreator.newUpdateAllocationDTO;
-import static br.com.sw2you.realmeet.validator.ValidatorConstants.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AllocationUpdateValidatorUnitTest extends BaseUnitTeste {
     private AllocationValidator victim;
@@ -68,8 +68,7 @@ class AllocationUpdateValidatorUnitTest extends BaseUnitTeste {
             () ->
                 victim.validate(
                     DEFAULT_ALLOCATION_ID,
-                    newUpdateAllocationDTO().subject(StringUtils.rightPad(
-                        "X", ALLOCATION_SUBJECT_MAX_LENGTH + 1, 'X'))
+                    newUpdateAllocationDTO().subject(StringUtils.rightPad("X", ALLOCATION_SUBJECT_MAX_LENGTH + 1, 'X'))
                 )
         );
 
@@ -112,8 +111,8 @@ class AllocationUpdateValidatorUnitTest extends BaseUnitTeste {
             InvalidRequestException.class,
             () ->
                 victim.validate(
-                    DEFAULT_ALLOCATION_ID, newUpdateAllocationDTO().
-                        startAt(now().plusDays(1)).endAt(now().plusDays(1).minusMinutes(30))
+                    DEFAULT_ALLOCATION_ID,
+                    newUpdateAllocationDTO().startAt(now().plusDays(1)).endAt(now().plusDays(1).minusMinutes(30))
                 )
         );
         assertEquals(1, exception.getValidationErrors().getNumberOfErros());
@@ -127,8 +126,11 @@ class AllocationUpdateValidatorUnitTest extends BaseUnitTeste {
     void testValidateWhenDateIsInThePast() {
         var exception = assertThrows(
             InvalidRequestException.class,
-            () -> victim.validate(DEFAULT_ALLOCATION_ID, newUpdateAllocationDTO().
-                startAt(now().minusMinutes(30)).endAt(now().plusMinutes(30)))
+            () ->
+                victim.validate(
+                    DEFAULT_ALLOCATION_ID,
+                    newUpdateAllocationDTO().startAt(now().minusMinutes(30)).endAt(now().plusMinutes(30))
+                )
         );
         assertEquals(1, exception.getValidationErrors().getNumberOfErros());
         assertEquals(
@@ -143,7 +145,8 @@ class AllocationUpdateValidatorUnitTest extends BaseUnitTeste {
             InvalidRequestException.class,
             () ->
                 victim.validate(
-                    DEFAULT_ALLOCATION_ID, newUpdateAllocationDTO()
+                    DEFAULT_ALLOCATION_ID,
+                    newUpdateAllocationDTO()
                         .startAt(now().plusDays(1))
                         .endAt(now().plusDays(1).plusSeconds(ALLOCATION_MAX_DURATION_SECONDS + 1))
                 )
