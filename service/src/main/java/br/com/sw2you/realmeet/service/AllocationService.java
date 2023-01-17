@@ -17,6 +17,9 @@ import br.com.sw2you.realmeet.mapper.AllocationMapper;
 import br.com.sw2you.realmeet.util.DateUtils;
 import br.com.sw2you.realmeet.util.ResponseEntityUtils;
 import br.com.sw2you.realmeet.validator.AllocationValidator;
+
+import java.time.LocalDate;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -78,6 +81,10 @@ public class AllocationService {
             updateAllocationDTO.getStartAt(),
             updateAllocationDTO.getEndAt()
         );
+    }
+
+    public List<AllocationDTO> listAllocations(String employeeEmail, Long roomId, LocalDate startAt, LocalDate endAt) {
+        return null;
     }
 
     private Allocation getAllocationOrThrow(Long allocationId) {
