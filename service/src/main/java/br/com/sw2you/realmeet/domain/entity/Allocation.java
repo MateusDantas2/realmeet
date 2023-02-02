@@ -1,17 +1,19 @@
 package br.com.sw2you.realmeet.domain.entity;
 
-import static br.com.sw2you.realmeet.util.DateUtils.*;
+import static br.com.sw2you.realmeet.util.DateUtils.now;
 import static java.util.Objects.isNull;
 
 import br.com.sw2you.realmeet.domain.model.Employee;
-import br.com.sw2you.realmeet.util.DateUtils;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "allocation")
 public class Allocation {
+    public static final List<String> SORTABLE_FIELDS = List.of("startAt", "endAt");
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

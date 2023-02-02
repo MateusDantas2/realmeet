@@ -3,6 +3,7 @@ package br.com.sw2you.realmeet.domain.repository;
 import br.com.sw2you.realmeet.domain.entity.Allocation;
 import java.time.OffsetDateTime;
 import java.util.List;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -37,6 +38,7 @@ public interface AllocationRepository extends JpaRepository<Allocation, Long> {
         @Param("employeeEmail") String employeeEmail,
         @Param("roomId") Long roomId,
         @Param("startAt") OffsetDateTime startAt,
-        @Param("endAt") OffsetDateTime endAt
+        @Param("endAt") OffsetDateTime endAt,
+        Pageable pageable
     );
 }
