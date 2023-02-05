@@ -6,12 +6,12 @@ import static br.com.sw2you.realmeet.utils.TestDataCreator.newCreateRoomDTO;
 import static br.com.sw2you.realmeet.utils.TestDataCreator.newRoomBuilder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import br.com.sw2you.realmeet.core.BaseUnitTeste;
+import br.com.sw2you.realmeet.core.BaseUnitTest;
 import br.com.sw2you.realmeet.mapper.RoomMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class RoomMapperUnitTest extends BaseUnitTeste {
+class RoomMapperUnitTest extends BaseUnitTest {
     private RoomMapper victim;
 
     @BeforeEach

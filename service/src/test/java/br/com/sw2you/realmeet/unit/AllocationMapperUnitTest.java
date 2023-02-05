@@ -4,12 +4,12 @@ import static br.com.sw2you.realmeet.utils.MapperUtils.allocationMapper;
 import static br.com.sw2you.realmeet.utils.TestDataCreator.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import br.com.sw2you.realmeet.core.BaseUnitTeste;
+import br.com.sw2you.realmeet.core.BaseUnitTest;
 import br.com.sw2you.realmeet.mapper.AllocationMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class AllocationMapperUnitTest extends BaseUnitTeste {
+class AllocationMapperUnitTest extends BaseUnitTest {
     private AllocationMapper victim;
 
     @BeforeEach
