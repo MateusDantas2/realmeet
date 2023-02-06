@@ -1,20 +1,19 @@
 package br.com.sw2you.realmeet.unit;
 
-import br.com.sw2you.realmeet.core.BaseUnitTest;
-import br.com.sw2you.realmeet.domain.entity.Allocation;
-import br.com.sw2you.realmeet.exception.InvalidOrderByFieldException;
-import br.com.sw2you.realmeet.util.PageUtils;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.springframework.data.domain.Sort;
-
-import java.util.Collections;
-
 import static br.com.sw2you.realmeet.domain.entity.Allocation.SORTABLE_FIELDS;
 import static br.com.sw2you.realmeet.util.PageUtils.newPageable;
 import static java.util.Collections.emptyList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import br.com.sw2you.realmeet.core.BaseUnitTest;
+import br.com.sw2you.realmeet.domain.entity.Allocation;
+import br.com.sw2you.realmeet.exception.InvalidOrderByFieldException;
+import br.com.sw2you.realmeet.util.PageUtils;
+import java.util.Collections;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.data.domain.Sort;
 
 public class PageUtilsUnitTest extends BaseUnitTest {
 

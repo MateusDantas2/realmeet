@@ -12,14 +12,13 @@ import br.com.sw2you.realmeet.domain.entity.Allocation;
 import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
 import br.com.sw2you.realmeet.domain.repository.RoomRepository;
 import br.com.sw2you.realmeet.service.AllocationService;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.HttpClientErrorException;
-
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 class AllocationApiFilterIntegrationTest extends BaseIntegrationTest {
     @Autowired
@@ -157,15 +156,7 @@ class AllocationApiFilterIntegrationTest extends BaseIntegrationTest {
     @Test
     void testFilterAllocationOrderByStartAtDesc() {
         var allocationList = persistAllocations(3);
-        var allocationDTOList = api.listAllocations(
-            null,
-            null,
-            null,
-            null,
-            "-startAt",
-            null,
-            null
-        );
+        var allocationDTOList = api.listAllocations(null, null, null, null, "-startAt", null, null);
 
         assertEquals(3, allocationDTOList.size());
         assertEquals(allocationList.get(0).getId(), allocationDTOList.get(2).getId());

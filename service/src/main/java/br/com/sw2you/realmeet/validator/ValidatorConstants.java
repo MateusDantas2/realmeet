@@ -30,6 +30,7 @@ public final class ValidatorConstants {
     public static final String INCONSISTENT = ".inconsistent";
     public static final String IN_THE_PAST = ".inThePast";
     public static final String EXCEEDS_DURATION = ".exceedsDuration";
+    public static final String OVERLAPS = ".overlaps";
     public static final String INVALID = ".invalid";
 
     private ValidatorConstants() {}

@@ -14,4 +14,13 @@ public final class DateUtils {
     public static OffsetDateTime now() {
         return OffsetDateTime.now(DEFAULT_TIMEZONE).truncatedTo(MILLIS);
     }
+
+    public static boolean isOverlapping(
+        OffsetDateTime start1,
+        OffsetDateTime end1,
+        OffsetDateTime start2,
+        OffsetDateTime end2
+    ) {
+        return start1.compareTo(end2) < 0 && end1.compareTo(start2) > 0;
+    }
 }
