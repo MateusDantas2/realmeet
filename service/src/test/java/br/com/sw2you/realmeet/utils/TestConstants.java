@@ -16,6 +16,7 @@ public final class TestConstants {
     public static final String DEFAULT_EMPLOYEE_EMAIL = "mateusdantas.dev@gmail.com";
     public static final OffsetDateTime DEFAULT_ALLOCATION_START_AT = now().plusDays(1);
     public static final OffsetDateTime DEFAULT_ALLOCATION_END_AT = DEFAULT_ALLOCATION_START_AT.plusHours(1);
+    public static final String TEST_CLIENT_API_KEY = "test-api-key";
 
     private TestConstants() {}
 }

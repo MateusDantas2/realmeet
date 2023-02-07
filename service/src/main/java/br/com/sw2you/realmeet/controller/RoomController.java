@@ -25,24 +25,24 @@ public class RoomController implements RoomsApi {
     }
 
     @Override
-    public CompletableFuture<ResponseEntity<RoomDTO>> getRoom(Long id) {
+    public CompletableFuture<ResponseEntity<RoomDTO>> getRoom(String apiKey, Long id) {
         return supplyAsync(() -> roomService.getRoom(id), controllersExecutor).thenApply(ResponseEntityUtils::ok);
     }
 
     @Override
-    public CompletableFuture<ResponseEntity<RoomDTO>> createRoom(CreateRoomDTO createRoomDTO) {
+    public CompletableFuture<ResponseEntity<RoomDTO>> createRoom(String apiKey, CreateRoomDTO createRoomDTO) {
         return supplyAsync(() -> roomService.createRoom(createRoomDTO), controllersExecutor)
             .thenApply(ResponseEntityUtils::created);
     }
 
     @Override
-    public CompletableFuture<ResponseEntity<Void>> deleteRoom(Long id) {
+    public CompletableFuture<ResponseEntity<Void>> deleteRoom(String apiKey, Long id) {
         return runAsync(() -> roomService.deletedRoom(id), controllersExecutor)
             .thenApply(ResponseEntityUtils::noContent);
     }
 
     @Override
-    public CompletableFuture<ResponseEntity<Void>> updateRoom(Long id, UpdateRoomDTO updateRoomDTO) {
+    public CompletableFuture<ResponseEntity<Void>> updateRoom(String apiKey, Long id, UpdateRoomDTO updateRoomDTO) {
         return runAsync(() -> roomService.updateRoom(id, updateRoomDTO), controllersExecutor)
             .thenApply(ResponseEntityUtils::noContent);
     }
