@@ -18,6 +18,16 @@ spring:
     username: root
     password: root
     type: com.zaxxer.hikari.HikariDataSource
+  mail:
+    host: smtp.gmail.com
+    username: abc@gmail.com
+    password: xyz
+    from: abc@gmail.com
+    properties:
+      mail.transport.protocol: smtp
+      mail.smtp.port: 587
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
 
 # =================================
 # = Logging

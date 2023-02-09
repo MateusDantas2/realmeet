@@ -16,9 +16,9 @@ public class FilterConfiguration {
 
     @Bean
     public FilterRegistrationBean<VerifyApiKeyFilter> verifyApiKeyFilter() {
-        var filterRegistrationBean = new FilterRegistrationBean<VerifyApiKeyFilter>();
-        filterRegistrationBean.setFilter(new VerifyApiKeyFilter(clientRepository));
-        filterRegistrationBean.addUrlPatterns("/rooms/*", "/allocations/*");
-        return filterRegistrationBean;
+        var filterFilterRegistrationBean = new FilterRegistrationBean<VerifyApiKeyFilter>();
+        filterFilterRegistrationBean.setFilter(new VerifyApiKeyFilter(clientRepository));
+        filterFilterRegistrationBean.addUrlPatterns("/rooms/*", "/allocations/*");
+        return filterFilterRegistrationBean;
     }
 }

@@ -1,10 +1,13 @@
 package br.com.sw2you.realmeet.domain.entity;
 
+import lombok.Getter;
+
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Getter
 @Entity
 public class Client {
     @Id
@@ -23,18 +26,6 @@ public class Client {
         apiKey = builder.apiKey;
         description = builder.description;
         active = builder.active;
-    }
-
-    public String getApiKey() {
-        return apiKey;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Boolean getActive() {
-        return active;
     }
 
     @Override
@@ -56,9 +47,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return (
-            "Client{" + "apiKey='" + apiKey + '\'' + ", description='" + description + '\'' + ", active=" + active + '}'
-        );
+        return "Client{apiKey='" + apiKey + '\'' + ", description='" + description + '\'' + ", active=" + active + '}';
     }
 
     public static Builder newBuilder() {
