@@ -1,16 +1,15 @@
 package br.com.sw2you.realmeet.config;
 
+import static br.com.sw2you.realmeet.config.properties.EmailConfigProperties.*;
+
 import br.com.sw2you.realmeet.config.properties.EmailConfigProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
-import static br.com.sw2you.realmeet.config.properties.EmailConfigProperties.*;
-
 @Configuration
 public class EmailConfiguration {
-
     private final EmailConfigProperties emailConfigProperties;
 
     public EmailConfiguration(EmailConfigProperties emailConfigProperties) {

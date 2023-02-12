@@ -1,9 +1,9 @@
 package br.com.sw2you.realmeet.config.properties;
 
+import java.util.Map;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
 
-import java.util.Map;
 @ConfigurationProperties(prefix = "spring.mail")
 @ConstructorBinding
 public class EmailConfigProperties {
@@ -18,7 +18,13 @@ public class EmailConfigProperties {
     private final String from;
     private final Map<String, String> properties;
 
-    public EmailConfigProperties(String host, String username, String password, String from, Map<String, String> properties) {
+    public EmailConfigProperties(
+        String host,
+        String username,
+        String password,
+        String from,
+        Map<String, String> properties
+    ) {
         this.host = host;
         this.username = username;
         this.password = password;

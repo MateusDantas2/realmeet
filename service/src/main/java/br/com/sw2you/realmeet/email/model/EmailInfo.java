@@ -1,12 +1,9 @@
 package br.com.sw2you.realmeet.email.model;
 
-import lombok.Getter;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-@Getter
 public class EmailInfo {
     private final String from;
     private final List<String> to;
@@ -28,20 +25,52 @@ public class EmailInfo {
         templateData = builder.templateData;
     }
 
+    public String getFrom() {
+        return from;
+    }
+
+    public List<String> getTo() {
+        return to;
+    }
+
+    public List<String> getCc() {
+        return cc;
+    }
+
+    public List<String> getBcc() {
+        return bcc;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public List<Attachment> getAttachments() {
+        return attachments;
+    }
+
+    public String getTemplate() {
+        return template;
+    }
+
+    public Map<String, Object> getTemplateData() {
+        return templateData;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EmailInfo emailInfo = (EmailInfo) o;
         return (
-                Objects.equals(from, emailInfo.from) &&
-                        Objects.equals(to, emailInfo.to) &&
-                        Objects.equals(cc, emailInfo.cc) &&
-                        Objects.equals(bcc, emailInfo.bcc) &&
-                        Objects.equals(subject, emailInfo.subject) &&
-                        Objects.equals(attachments, emailInfo.attachments) &&
-                        Objects.equals(template, emailInfo.template) &&
-                        Objects.equals(templateData, emailInfo.templateData)
+            Objects.equals(from, emailInfo.from) &&
+            Objects.equals(to, emailInfo.to) &&
+            Objects.equals(cc, emailInfo.cc) &&
+            Objects.equals(bcc, emailInfo.bcc) &&
+            Objects.equals(subject, emailInfo.subject) &&
+            Objects.equals(attachments, emailInfo.attachments) &&
+            Objects.equals(template, emailInfo.template) &&
+            Objects.equals(templateData, emailInfo.templateData)
         );
     }
 
@@ -53,27 +82,27 @@ public class EmailInfo {
     @Override
     public String toString() {
         return (
-                "EmailInfo{" +
-                        "from='" +
-                        from +
-                        '\'' +
-                        ", to=" +
-                        to +
-                        ", cc=" +
-                        cc +
-                        ", bcc=" +
-                        bcc +
-                        ", subject='" +
-                        subject +
-                        '\'' +
-                        ", attachments=" +
-                        attachments +
-                        ", template='" +
-                        template +
-                        '\'' +
-                        ", templateData=" +
-                        templateData +
-                        '}'
+            "EmailInfo{" +
+            "from='" +
+            from +
+            '\'' +
+            ", to=" +
+            to +
+            ", cc=" +
+            cc +
+            ", bcc=" +
+            bcc +
+            ", subject='" +
+            subject +
+            '\'' +
+            ", attachments=" +
+            attachments +
+            ", template='" +
+            template +
+            '\'' +
+            ", templateData=" +
+            templateData +
+            '}'
         );
     }
 

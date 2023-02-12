@@ -1,11 +1,8 @@
 package br.com.sw2you.realmeet.email.model;
 
-import lombok.Getter;
-
 import java.io.InputStream;
 import java.util.Objects;
 
-@Getter
 public class Attachment {
     private final InputStream inputStream;
     private final String contentType;
@@ -17,12 +14,28 @@ public class Attachment {
         fileName = builder.fileName;
     }
 
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Attachment that = (Attachment) o;
-        return Objects.equals(inputStream, that.inputStream) && Objects.equals(contentType, that.contentType) && Objects.equals(fileName, that.fileName);
+        return (
+            Objects.equals(inputStream, that.inputStream) &&
+            Objects.equals(contentType, that.contentType) &&
+            Objects.equals(fileName, that.fileName)
+        );
     }
 
     @Override
@@ -32,11 +45,18 @@ public class Attachment {
 
     @Override
     public String toString() {
-        return "Attachment{" +
-                "inputStream=" + inputStream +
-                ", contentType='" + contentType + '\'' +
-                ", fileName='" + fileName + '\'' +
-                '}';
+        return (
+            "Attachment{" +
+            "inputStream=" +
+            inputStream +
+            ", contentType='" +
+            contentType +
+            '\'' +
+            ", fileName='" +
+            fileName +
+            '\'' +
+            '}'
+        );
     }
 
     public static Builder newBuilder() {
