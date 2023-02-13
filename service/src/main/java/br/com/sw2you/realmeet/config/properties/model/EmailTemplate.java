@@ -21,10 +21,7 @@ public class EmailTemplate {
 
     @Override
     public String toString() {
-        return "EmailTemplate{" +
-                "subject='" + subject + '\'' +
-                ", templateName='" + templateName + '\'' +
-                '}';
+        return "EmailTemplate{" + "subject='" + subject + '\'' + ", templateName='" + templateName + '\'' + '}';
     }
 
     @Override
