@@ -18,8 +18,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mail.javamail.JavaMailSender;
 
 public class SendEmailIntegrationTest extends BaseIntegrationTest {
-    private static final String EMAIL_ADDRESS = "writeyourshippingemail@gmail.com";
-    private static final String EMAIL_TO = "writethetargetemail@gmail.com";
+    private static final String EMAIL_ADDRESS = "mateusdantas.dev@gmail.com";
+//    private static final String EMAIL_TO = "mateusdantas.dev@gmail.com";
     private static final String SUBJECT = "Subject";
     private static final String EMAIL_TEMPLATE = "template-test.html";
 
@@ -38,10 +38,10 @@ public class SendEmailIntegrationTest extends BaseIntegrationTest {
         var emailInfo = EmailInfo
             .newBuilder()
             .from(EMAIL_ADDRESS)
-            .to(List.of(EMAIL_TO))
+            .to(List.of(EMAIL_ADDRESS))
             .subject(SUBJECT)
             .template(EMAIL_TEMPLATE)
-            .templateData(Map.of("param", "I Love You so much, the size of universe!"))
+            .templateData(Map.of("param", "E-mail enviado com sucesso!"))
             .build();
         victim.send(emailInfo);
         sleep(2000);
