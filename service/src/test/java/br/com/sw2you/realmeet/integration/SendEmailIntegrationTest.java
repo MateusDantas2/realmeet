@@ -19,7 +19,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 
 public class SendEmailIntegrationTest extends BaseIntegrationTest {
     private static final String EMAIL_ADDRESS = "mateusdantas.dev@gmail.com";
-//    private static final String EMAIL_TO = "mateusdantas.dev@gmail.com";
+    //    private static final String EMAIL_TO = "mateusdantas.dev@gmail.com";
     private static final String SUBJECT = "Subject";
     private static final String EMAIL_TEMPLATE = "template-test.html";
 

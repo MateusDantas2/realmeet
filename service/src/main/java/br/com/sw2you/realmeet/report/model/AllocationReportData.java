@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class AllocationReportData extends AbstractReportData {
-
     private final LocalDate dateFrom;
     private final LocalDate dateTo;
 
@@ -38,10 +37,7 @@ public class AllocationReportData extends AbstractReportData {
 
     @Override
     public String toString() {
-        return "AllocationDataReport{" +
-                "dateFrom=" + dateFrom +
-                ", dateTo=" + dateTo +
-                '}';
+        return "AllocationDataReport{" + "dateFrom=" + dateFrom + ", dateTo=" + dateTo + '}';
     }
 
     public static Builder newBuilder() {
