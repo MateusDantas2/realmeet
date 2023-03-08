@@ -6,13 +6,12 @@ import br.com.sw2you.realmeet.report.enumeration.ReportFormat;
 import br.com.sw2you.realmeet.report.enumeration.ReportHandlerType;
 import br.com.sw2you.realmeet.report.model.AbstractReportData;
 import br.com.sw2you.realmeet.report.validator.AbstractReportValidator;
-import net.sf.jasperreports.engine.*;
-
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.BiFunction;
+import net.sf.jasperreports.engine.*;
 
 public abstract class AbstractReportHandler<T, D extends AbstractReportData> {
     private final JasperReport jasperReport;
@@ -24,14 +23,13 @@ public abstract class AbstractReportHandler<T, D extends AbstractReportData> {
     public byte[] createReportBytes(D reportData, ReportFormat reportFormat) {
         var reportParams = new HashMap<String, Object>();
         var out = new ByteArrayOutputStream();
-        
+
         fillReportParams(reportParams, reportData);
 
         try {
             var jasperPrint = JasperFillManager.fillReport(jasperReport, reportParams, getDataSource(reportData));
             exportReportToStream(jasperPrint, out, reportFormat);
             return out.toByteArray();
-
         } catch (JRException e) {
             throw new RuntimeException(e);
         }
