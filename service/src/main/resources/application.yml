@@ -57,3 +57,6 @@ realmeet:
       allocationReport:
         subject: Relatório de agendamento de sala
         templateName: allocation-report.html
+  reports:
+    allocationReport:
+      maxMonthsInterval: 6

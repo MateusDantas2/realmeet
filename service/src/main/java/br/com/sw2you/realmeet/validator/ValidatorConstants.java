@@ -15,6 +15,9 @@ public final class ValidatorConstants {
     public static final String ALLOCATION_EMPLOYEE_EMAIL = "employeeEmail";
     public static final String ALLOCATION_START_AT = "startAt";
     public static final String ALLOCATION_END_AT = "endAt";
+    public static final String DATE_FROM = "dateFrom";
+    public static final String DATE_TO = "dateTo";
+    public static final String EMAIL = "email";
     public static final String ORDER_BY = "orderBy";
     public static final int ALLOCATION_SUBJECT_MAX_LENGTH = 60;
     public static final int ALLOCATION_EMPLOYEE_NAME_MAX_LENGTH = 20;
@@ -30,6 +33,7 @@ public final class ValidatorConstants {
     public static final String INCONSISTENT = ".inconsistent";
     public static final String IN_THE_PAST = ".inThePast";
     public static final String EXCEEDS_DURATION = ".exceedsDuration";
+    public static final String EXCEEDS_INTERVAL = ".exceedsInterval";
     public static final String OVERLAPS = ".overlaps";
     public static final String INVALID = ".invalid";
 

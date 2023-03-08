@@ -1,6 +1,5 @@
 package br.com.sw2you.realmeet.report.handler;
 
-import br.com.sw2you.realmeet.domain.entity.Allocation;
 import br.com.sw2you.realmeet.email.TemplateType;
 import br.com.sw2you.realmeet.report.enumeration.ReportFormat;
 import br.com.sw2you.realmeet.report.enumeration.ReportHandlerType;
