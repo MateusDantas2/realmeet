@@ -1,0 +1,1262 @@
+{
+	"info": {
+		"_postman_id": "3111f1c1-1239-4445-8953-a56f63988453",
+		"name": "realmeet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21301982"
+	},
+	"item": [
+		{
+			"name": "rooms",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Return a room by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/rooms/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"rooms",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-56708908",
+											"description": "(Required) ID of the room"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:3306/rooms/:id",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3306",
+											"path": [
+												"rooms",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) ID of the room"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"labore\",\n  \"seats\": 59819896,\n  \"id\": -68010743\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/rooms/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"rooms",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) ID of the room"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Deletes a room by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/rooms/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"rooms",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-56708908",
+											"description": "(Required) ID of the room"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Deleted Successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:3306/rooms/:id",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3306",
+											"path": [
+												"rooms",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) ID of the room"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/rooms/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"rooms",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) ID of the room"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update a room by ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/rooms/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"rooms",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-56708908",
+											"description": "(Required) Id of the room"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3306/rooms/:id",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3306",
+											"path": [
+												"rooms",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) Id of the room"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/rooms/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"rooms",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) Id of the room"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/rooms/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"rooms",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) Id of the room"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"field\": \"elit eu\",\n    \"errorCode\": \"adipisicing ut\"\n  },\n  {\n    \"field\": \"dolore dolore sint ad\",\n    \"errorCode\": \"enim\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Creates a room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) The API key to authenticate the request",
+								"key": "api-key",
+								"value": "cupidatat commodo incididunt est"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/rooms",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3306/rooms",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3306",
+									"path": [
+										"rooms"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"labore\",\n  \"seats\": 59819896,\n  \"id\": -68010743\n}"
+						},
+						{
+							"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/rooms",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"rooms"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"field\": \"veniam eiusmod\",\n    \"errorCode\": \"sit magna voluptate ut fugiat\"\n  },\n  {\n    \"field\": \"in magna sed\",\n    \"errorCode\": \"dolore sed qui esse ut\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "allocations",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Deletes an allocation by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/allocations/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"allocations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-56708908",
+											"description": "(Required) ID of the allocation"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Deleted Successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:3306/allocations/:id",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3306",
+											"path": [
+												"allocations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) ID of the allocation"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/allocations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"allocations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) ID of the allocation"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/allocations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"allocations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) ID of the allocation"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"field\": \"elit eu\",\n    \"errorCode\": \"adipisicing ut\"\n  },\n  {\n    \"field\": \"dolore dolore sint ad\",\n    \"errorCode\": \"enim\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Updates an allocation by ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"subject\": \"o\",\n  \"startAt\": \"1987-07-21T08:45:29.662Z\",\n  \"endAt\": \"2007-02-28T17:39:57.607Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/allocations/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"allocations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-56708908",
+											"description": "(Required) Id of the allocation"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"subject\": \"o\",\n  \"startAt\": \"1987-07-21T08:45:29.662Z\",\n  \"endAt\": \"2007-02-28T17:39:57.607Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3306/allocations/:id",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3306",
+											"path": [
+												"allocations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) Id of the allocation"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"subject\": \"o\",\n  \"startAt\": \"1987-07-21T08:45:29.662Z\",\n  \"endAt\": \"2007-02-28T17:39:57.607Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/allocations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"allocations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) Id of the allocation"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "(Required) The API key to authenticate the request",
+												"key": "api-key",
+												"value": "cupidatat commodo incididunt est"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"subject\": \"o\",\n  \"startAt\": \"1987-07-21T08:45:29.662Z\",\n  \"endAt\": \"2007-02-28T17:39:57.607Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/allocations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"allocations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-56708908",
+													"description": "(Required) Id of the allocation"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"field\": \"elit eu\",\n    \"errorCode\": \"adipisicing ut\"\n  },\n  {\n    \"field\": \"dolore dolore sint ad\",\n    \"errorCode\": \"enim\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Lists allocations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) The API key to authenticate the request",
+								"key": "api-key",
+								"value": "cupidatat commodo incididunt est"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/allocations?employeeEmail=cupidatat commodo incididunt est&roomId=-56708908&startAt=1963-12-29&endAt=1963-12-29&orderBy=cupidatat commodo incididunt est&limit=13218647&page=13218647",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"allocations"
+							],
+							"query": [
+								{
+									"key": "employeeEmail",
+									"value": "cupidatat commodo incididunt est",
+									"description": "Email of the employee"
+								},
+								{
+									"key": "roomId",
+									"value": "-56708908",
+									"description": "Room ID"
+								},
+								{
+									"key": "startAt",
+									"value": "1963-12-29",
+									"description": "Allocation start time"
+								},
+								{
+									"key": "endAt",
+									"value": "1963-12-29",
+									"description": "Allocation end time"
+								},
+								{
+									"key": "orderBy",
+									"value": "cupidatat commodo incididunt est",
+									"description": "Field to order by"
+								},
+								{
+									"key": "limit",
+									"value": "13218647",
+									"description": "Maximum number of returned records"
+								},
+								{
+									"key": "page",
+									"value": "13218647",
+									"description": "The page of records to fetch (0 index based)"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3306/allocations?employeeEmail=cupidatat commodo incididunt est&roomId=-56708908&startAt=1963-12-29&endAt=1963-12-29&orderBy=cupidatat commodo incididunt est&limit=13218647&page=13218647",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3306",
+									"path": [
+										"allocations"
+									],
+									"query": [
+										{
+											"key": "employeeEmail",
+											"value": "cupidatat commodo incididunt est"
+										},
+										{
+											"key": "roomId",
+											"value": "-56708908"
+										},
+										{
+											"key": "startAt",
+											"value": "1963-12-29"
+										},
+										{
+											"key": "endAt",
+											"value": "1963-12-29"
+										},
+										{
+											"key": "orderBy",
+											"value": "cupidatat commodo incididunt est"
+										},
+										{
+											"key": "limit",
+											"value": "13218647"
+										},
+										{
+											"key": "page",
+											"value": "13218647"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"subject\": \"fugiat eiusmod\",\n    \"startAt\": \"2003-10-16T15:06:00.134Z\",\n    \"endAt\": \"1947-09-25T11:45:31.506Z\",\n    \"roomId\": -5624604,\n    \"employeeName\": \"minim aliqua\",\n    \"employeeEmail\": \"dolor veniam aliqua laboris\",\n    \"id\": -18615217\n  },\n  {\n    \"subject\": \"est dolor Lorem Ut\",\n    \"startAt\": \"2016-06-24T20:45:18.041Z\",\n    \"endAt\": \"2016-09-30T16:36:01.354Z\",\n    \"roomId\": 52889728,\n    \"employeeName\": \"dolor et reprehenderit\",\n    \"employeeEmail\": \"sint adipisicing sunt\",\n    \"id\": 58872779\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Creates an allocation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) The API key to authenticate the request",
+								"key": "api-key",
+								"value": "cupidatat commodo incididunt est"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"subject\": \"qui\",\n  \"startAt\": \"1993-02-27T04:51:34.356Z\",\n  \"endAt\": \"2002-11-07T00:17:35.481Z\",\n  \"roomId\": 10537030,\n  \"employeeName\": \"mollit ullamco\",\n  \"employeeEmail\": \"adipisicing in in\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/allocations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"allocations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"subject\": \"qui\",\n  \"startAt\": \"1993-02-27T04:51:34.356Z\",\n  \"endAt\": \"2002-11-07T00:17:35.481Z\",\n  \"roomId\": 10537030,\n  \"employeeName\": \"mollit ullamco\",\n  \"employeeEmail\": \"adipisicing in in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3306/allocations",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3306",
+									"path": [
+										"allocations"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"subject\": \"Lorem\",\n  \"startAt\": \"1978-05-15T21:55:23.829Z\",\n  \"endAt\": \"2017-11-07T16:03:09.739Z\",\n  \"roomId\": -14598296,\n  \"employeeName\": \"enim\",\n  \"employeeEmail\": \"labore dolor Excepteur dolore\",\n  \"id\": 74074213\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"subject\": \"qui\",\n  \"startAt\": \"1993-02-27T04:51:34.356Z\",\n  \"endAt\": \"2002-11-07T00:17:35.481Z\",\n  \"roomId\": 10537030,\n  \"employeeName\": \"mollit ullamco\",\n  \"employeeEmail\": \"adipisicing in in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/allocations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"allocations"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) The API key to authenticate the request",
+										"key": "api-key",
+										"value": "cupidatat commodo incididunt est"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"subject\": \"qui\",\n  \"startAt\": \"1993-02-27T04:51:34.356Z\",\n  \"endAt\": \"2002-11-07T00:17:35.481Z\",\n  \"roomId\": 10537030,\n  \"employeeName\": \"mollit ullamco\",\n  \"employeeEmail\": \"adipisicing in in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/allocations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"allocations"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"field\": \"elit eu\",\n    \"errorCode\": \"adipisicing ut\"\n  },\n  {\n    \"field\": \"dolore dolore sint ad\",\n    \"errorCode\": \"enim\"\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3306",
+			"type": "string"
+		}
+	]
+}
