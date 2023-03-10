@@ -3,7 +3,8 @@ info:
   version: 1.0.0
   title: realmeet
 servers:
-  - url: 'http://localhost:3306'
+  - url: 'http://localhost:3000'
+
 paths:
   /rooms/{id}:
     get:
@@ -51,7 +52,7 @@ paths:
           description: Not Found
 
     put:
-      summary: 'Update a room by ID'
+      summary: 'Updates a room by ID'
       operationId: updateRoom
       tags:
         - room
@@ -60,7 +61,7 @@ paths:
         - name: id
           in: path
           required: true
-          description: Id of the room
+          description: ID of the room
           schema:
             type: integer
             format: int64
@@ -72,7 +73,7 @@ paths:
         required: true
       responses:
         204:
-          description: 'Update Successfully'
+          description: 'Updated Successfully'
         404:
           description: Not Found
         422:
@@ -94,7 +95,7 @@ paths:
         required: true
       responses:
         201:
-          description: 'Created'
+          description: Created
           content:
             application/json:
               schema:
@@ -162,7 +163,7 @@ paths:
         required: true
       responses:
         201:
-          description: 'Created'
+          description: Created
           content:
             application/json:
               schema:
@@ -205,7 +206,7 @@ paths:
         - name: id
           in: path
           required: true
-          description: Id of the allocation
+          description: ID of the allocation
           schema:
             type: integer
             format: int64
@@ -217,9 +218,49 @@ paths:
         required: true
       responses:
         204:
-          description: 'Update Successfully'
+          description: 'Updated Successfully'
         404:
           description: Not Found
+        422:
+          $ref: '#/components/responses/UnprocessableEntity'
+
+  /reports/allocation:
+    post:
+      tags:
+        - report
+      summary: Generates the allocation report
+      operationId: createAllocationReport
+      parameters:
+        - $ref: '#/components/parameters/apiKey'
+        - name: email
+          in: query
+          description: The e-mail to send the report
+          required: true
+          schema:
+            type: string
+        - name: dateFrom
+          in: query
+          description: Start date to filter
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: dateTo
+          in: query
+          description: End date to filter
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: reportFormat
+          in: query
+          description: Report format. Can be 'PDF' or 'XML'. Defaults to 'PDF'
+          required: false
+          schema:
+            type: string
+      responses:
+        201:
+          description: Created
         422:
           $ref: '#/components/responses/UnprocessableEntity'
 
@@ -297,8 +338,8 @@ components:
 
   responses:
     UnprocessableEntity:
-      description: O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição
-        está correta, mas não foi possível processar as instruções presentes.
+      description: The server understands the content type of the request entity but was unable to process
+        the contained instructions.
       content:
         application/json:
           schema:

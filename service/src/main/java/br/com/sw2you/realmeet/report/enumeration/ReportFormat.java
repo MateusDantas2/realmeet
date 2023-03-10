@@ -1,5 +1,7 @@
 package br.com.sw2you.realmeet.report.enumeration;
 
+import java.util.Optional;
+
 public enum ReportFormat {
     PDF("application/pdf"),
     XML("application/xml");
@@ -18,7 +20,11 @@ public enum ReportFormat {
         return "." + name().toLowerCase();
     }
 
-    public static ReportFormat defaultReport() {
+    public static ReportFormat fromString(String reportFormatStr) {
+        return Optional.ofNullable(reportFormatStr).map(t -> valueOf(reportFormatStr)).orElse(defaultReport());
+    }
+
+    private static ReportFormat defaultReport() {
         return PDF;
     }
 }

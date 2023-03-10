@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3111f1c1-1239-4445-8953-a56f63988453",
+		"_postman_id": "b9aa709a-297c-4739-9fc4-1f0ecd833fc7",
 		"name": "realmeet",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "21301982"
@@ -20,7 +20,7 @@
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									},
 									{
 										"key": "Accept",
@@ -39,7 +39,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "-56708908",
+											"value": "<long>",
 											"description": "(Required) ID of the room"
 										}
 									]
@@ -54,16 +54,14 @@
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"url": {
-											"raw": "http://localhost:3306/rooms/:id",
-											"protocol": "http",
+											"raw": "{{baseUrl}}/rooms/:id",
 											"host": [
-												"localhost"
+												"{{baseUrl}}"
 											],
-											"port": "3306",
 											"path": [
 												"rooms",
 												":id"
@@ -71,7 +69,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
+													"value": "<long>",
 													"description": "(Required) ID of the room"
 												}
 											]
@@ -87,7 +85,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"name\": \"labore\",\n  \"seats\": 59819896,\n  \"id\": -68010743\n}"
+									"body": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\",\n  \"id\": -13589763\n}"
 								},
 								{
 									"name": "Not Found",
@@ -97,7 +95,7 @@
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"url": {
@@ -112,7 +110,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
+													"value": "<long>",
 													"description": "(Required) ID of the room"
 												}
 											]
@@ -140,7 +138,7 @@
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									}
 								],
 								"url": {
@@ -155,7 +153,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "-56708908",
+											"value": "<long>",
 											"description": "(Required) ID of the room"
 										}
 									]
@@ -170,16 +168,14 @@
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"url": {
-											"raw": "http://localhost:3306/rooms/:id",
-											"protocol": "http",
+											"raw": "{{baseUrl}}/rooms/:id",
 											"host": [
-												"localhost"
+												"{{baseUrl}}"
 											],
-											"port": "3306",
 											"path": [
 												"rooms",
 												":id"
@@ -187,7 +183,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
+													"value": "<long>",
 													"description": "(Required) ID of the room"
 												}
 											]
@@ -213,7 +209,7 @@
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"url": {
@@ -228,7 +224,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
+													"value": "<long>",
 													"description": "(Required) ID of the room"
 												}
 											]
@@ -249,14 +245,14 @@
 							]
 						},
 						{
-							"name": "Update a room by ID",
+							"name": "Updates a room by ID",
 							"request": {
 								"method": "PUT",
 								"header": [
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									},
 									{
 										"key": "Content-Type",
@@ -269,7 +265,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -288,27 +284,27 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "-56708908",
-											"description": "(Required) Id of the room"
+											"value": "<long>",
+											"description": "(Required) ID of the room"
 										}
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "Update Successfully",
+									"name": "Updated Successfully",
 									"originalRequest": {
 										"method": "PUT",
 										"header": [
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -316,12 +312,10 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:3306/rooms/:id",
-											"protocol": "http",
+											"raw": "{{baseUrl}}/rooms/:id",
 											"host": [
-												"localhost"
+												"{{baseUrl}}"
 											],
-											"port": "3306",
 											"path": [
 												"rooms",
 												":id"
@@ -329,8 +323,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
-													"description": "(Required) Id of the room"
+													"value": "<long>",
+													"description": "(Required) ID of the room"
 												}
 											]
 										}
@@ -355,12 +349,12 @@
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -379,8 +373,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
-													"description": "(Required) Id of the room"
+													"value": "<long>",
+													"description": "(Required) ID of the room"
 												}
 											]
 										}
@@ -398,19 +392,19 @@
 									"body": ""
 								},
 								{
-									"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+									"name": "The server understands the content type of the request entity but was unable to process the contained instructions.",
 									"originalRequest": {
 										"method": "PUT",
 										"header": [
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -429,8 +423,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
-													"description": "(Required) Id of the room"
+													"value": "<long>",
+													"description": "(Required) ID of the room"
 												}
 											]
 										}
@@ -445,7 +439,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n  {\n    \"field\": \"elit eu\",\n    \"errorCode\": \"adipisicing ut\"\n  },\n  {\n    \"field\": \"dolore dolore sint ad\",\n    \"errorCode\": \"enim\"\n  }\n]"
+									"body": "[\n  {\n    \"field\": \"Excepteur laboris reprehend\",\n    \"errorCode\": \"est nisi Duis incididunt\"\n  },\n  {\n    \"field\": \"et\",\n    \"errorCode\": \"ipsum exercitation\"\n  }\n]"
 								}
 							]
 						}
@@ -459,7 +453,7 @@
 							{
 								"description": "(Required) The API key to authenticate the request",
 								"key": "api-key",
-								"value": "cupidatat commodo incididunt est"
+								"value": "<string>"
 							},
 							{
 								"key": "Content-Type",
@@ -472,7 +466,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -498,12 +492,12 @@
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -511,12 +505,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3306/rooms",
-									"protocol": "http",
+									"raw": "{{baseUrl}}/rooms",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3306",
 									"path": [
 										"rooms"
 									]
@@ -532,22 +524,22 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"name\": \"labore\",\n  \"seats\": 59819896,\n  \"id\": -68010743\n}"
+							"body": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\",\n  \"id\": -13589763\n}"
 						},
 						{
-							"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+							"name": "The server understands the content type of the request entity but was unable to process the contained instructions.",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"veniam elit quis\",\n  \"seats\": -24147628\n}",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"seats\": \"<integer>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -574,7 +566,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"field\": \"veniam eiusmod\",\n    \"errorCode\": \"sit magna voluptate ut fugiat\"\n  },\n  {\n    \"field\": \"in magna sed\",\n    \"errorCode\": \"dolore sed qui esse ut\"\n  }\n]"
+							"body": "[\n  {\n    \"field\": \"deserunt ut non aliqua\",\n    \"errorCode\": \"ea proident\"\n  },\n  {\n    \"field\": \"sed ut\",\n    \"errorCode\": \"fugiat\"\n  }\n]"
 						}
 					]
 				}
@@ -594,7 +586,7 @@
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									},
 									{
 										"key": "Accept",
@@ -613,7 +605,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "-56708908",
+											"value": "<long>",
 											"description": "(Required) ID of the allocation"
 										}
 									]
@@ -628,16 +620,14 @@
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"url": {
-											"raw": "http://localhost:3306/allocations/:id",
-											"protocol": "http",
+											"raw": "{{baseUrl}}/allocations/:id",
 											"host": [
-												"localhost"
+												"{{baseUrl}}"
 											],
-											"port": "3306",
 											"path": [
 												"allocations",
 												":id"
@@ -645,7 +635,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
+													"value": "<long>",
 													"description": "(Required) ID of the allocation"
 												}
 											]
@@ -671,7 +661,7 @@
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"url": {
@@ -686,7 +676,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
+													"value": "<long>",
 													"description": "(Required) ID of the allocation"
 												}
 											]
@@ -705,14 +695,14 @@
 									"body": ""
 								},
 								{
-									"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+									"name": "The server understands the content type of the request entity but was unable to process the contained instructions.",
 									"originalRequest": {
 										"method": "DELETE",
 										"header": [
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"url": {
@@ -727,7 +717,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
+													"value": "<long>",
 													"description": "(Required) ID of the allocation"
 												}
 											]
@@ -743,7 +733,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n  {\n    \"field\": \"elit eu\",\n    \"errorCode\": \"adipisicing ut\"\n  },\n  {\n    \"field\": \"dolore dolore sint ad\",\n    \"errorCode\": \"enim\"\n  }\n]"
+									"body": "[\n  {\n    \"field\": \"Excepteur laboris reprehend\",\n    \"errorCode\": \"est nisi Duis incididunt\"\n  },\n  {\n    \"field\": \"et\",\n    \"errorCode\": \"ipsum exercitation\"\n  }\n]"
 								}
 							]
 						},
@@ -755,7 +745,7 @@
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									},
 									{
 										"key": "Content-Type",
@@ -768,7 +758,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"subject\": \"o\",\n  \"startAt\": \"1987-07-21T08:45:29.662Z\",\n  \"endAt\": \"2007-02-28T17:39:57.607Z\"\n}",
+									"raw": "{\n  \"subject\": \"<string>\",\n  \"startAt\": \"<dateTime>\",\n  \"endAt\": \"<dateTime>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -787,27 +777,27 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "-56708908",
-											"description": "(Required) Id of the allocation"
+											"value": "<long>",
+											"description": "(Required) ID of the allocation"
 										}
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "Update Successfully",
+									"name": "Updated Successfully",
 									"originalRequest": {
 										"method": "PUT",
 										"header": [
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"subject\": \"o\",\n  \"startAt\": \"1987-07-21T08:45:29.662Z\",\n  \"endAt\": \"2007-02-28T17:39:57.607Z\"\n}",
+											"raw": "{\n  \"subject\": \"<string>\",\n  \"startAt\": \"<dateTime>\",\n  \"endAt\": \"<dateTime>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -815,12 +805,10 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:3306/allocations/:id",
-											"protocol": "http",
+											"raw": "{{baseUrl}}/allocations/:id",
 											"host": [
-												"localhost"
+												"{{baseUrl}}"
 											],
-											"port": "3306",
 											"path": [
 												"allocations",
 												":id"
@@ -828,8 +816,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
-													"description": "(Required) Id of the allocation"
+													"value": "<long>",
+													"description": "(Required) ID of the allocation"
 												}
 											]
 										}
@@ -854,12 +842,12 @@
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"subject\": \"o\",\n  \"startAt\": \"1987-07-21T08:45:29.662Z\",\n  \"endAt\": \"2007-02-28T17:39:57.607Z\"\n}",
+											"raw": "{\n  \"subject\": \"<string>\",\n  \"startAt\": \"<dateTime>\",\n  \"endAt\": \"<dateTime>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -878,8 +866,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
-													"description": "(Required) Id of the allocation"
+													"value": "<long>",
+													"description": "(Required) ID of the allocation"
 												}
 											]
 										}
@@ -897,19 +885,19 @@
 									"body": ""
 								},
 								{
-									"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+									"name": "The server understands the content type of the request entity but was unable to process the contained instructions.",
 									"originalRequest": {
 										"method": "PUT",
 										"header": [
 											{
 												"description": "(Required) The API key to authenticate the request",
 												"key": "api-key",
-												"value": "cupidatat commodo incididunt est"
+												"value": "<string>"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"subject\": \"o\",\n  \"startAt\": \"1987-07-21T08:45:29.662Z\",\n  \"endAt\": \"2007-02-28T17:39:57.607Z\"\n}",
+											"raw": "{\n  \"subject\": \"<string>\",\n  \"startAt\": \"<dateTime>\",\n  \"endAt\": \"<dateTime>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -928,8 +916,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "-56708908",
-													"description": "(Required) Id of the allocation"
+													"value": "<long>",
+													"description": "(Required) ID of the allocation"
 												}
 											]
 										}
@@ -944,7 +932,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n  {\n    \"field\": \"elit eu\",\n    \"errorCode\": \"adipisicing ut\"\n  },\n  {\n    \"field\": \"dolore dolore sint ad\",\n    \"errorCode\": \"enim\"\n  }\n]"
+									"body": "[\n  {\n    \"field\": \"Excepteur laboris reprehend\",\n    \"errorCode\": \"est nisi Duis incididunt\"\n  },\n  {\n    \"field\": \"et\",\n    \"errorCode\": \"ipsum exercitation\"\n  }\n]"
 								}
 							]
 						}
@@ -958,7 +946,7 @@
 							{
 								"description": "(Required) The API key to authenticate the request",
 								"key": "api-key",
-								"value": "cupidatat commodo incididunt est"
+								"value": "xpto"
 							},
 							{
 								"key": "Accept",
@@ -966,9 +954,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/allocations?employeeEmail=cupidatat commodo incididunt est&roomId=-56708908&startAt=1963-12-29&endAt=1963-12-29&orderBy=cupidatat commodo incididunt est&limit=13218647&page=13218647",
+							"raw": "{{serverUrl}}/allocations",
 							"host": [
-								"{{baseUrl}}"
+								"{{serverUrl}}"
 							],
 							"path": [
 								"allocations"
@@ -976,38 +964,45 @@
 							"query": [
 								{
 									"key": "employeeEmail",
-									"value": "cupidatat commodo incididunt est",
-									"description": "Email of the employee"
+									"value": "<string>",
+									"description": "Email of the employee",
+									"disabled": true
 								},
 								{
 									"key": "roomId",
-									"value": "-56708908",
-									"description": "Room ID"
+									"value": "<long>",
+									"description": "Room ID",
+									"disabled": true
 								},
 								{
 									"key": "startAt",
-									"value": "1963-12-29",
-									"description": "Allocation start time"
+									"value": "<date>",
+									"description": "Allocation start time",
+									"disabled": true
 								},
 								{
 									"key": "endAt",
-									"value": "1963-12-29",
-									"description": "Allocation end time"
+									"value": "<date>",
+									"description": "Allocation end time",
+									"disabled": true
 								},
 								{
 									"key": "orderBy",
-									"value": "cupidatat commodo incididunt est",
-									"description": "Field to order by"
+									"value": "<string>",
+									"description": "Field to order by",
+									"disabled": true
 								},
 								{
 									"key": "limit",
-									"value": "13218647",
-									"description": "Maximum number of returned records"
+									"value": "<integer>",
+									"description": "Maximum number of returned records",
+									"disabled": true
 								},
 								{
 									"key": "page",
-									"value": "13218647",
-									"description": "The page of records to fetch (0 index based)"
+									"value": "<integer>",
+									"description": "The page of records to fetch (0 index based)",
+									"disabled": true
 								}
 							]
 						}
@@ -1021,47 +1016,45 @@
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:3306/allocations?employeeEmail=cupidatat commodo incididunt est&roomId=-56708908&startAt=1963-12-29&endAt=1963-12-29&orderBy=cupidatat commodo incididunt est&limit=13218647&page=13218647",
-									"protocol": "http",
+									"raw": "{{baseUrl}}/allocations?employeeEmail=<string>&roomId=<long>&startAt=<date>&endAt=<date>&orderBy=<string>&limit=<integer>&page=<integer>",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3306",
 									"path": [
 										"allocations"
 									],
 									"query": [
 										{
 											"key": "employeeEmail",
-											"value": "cupidatat commodo incididunt est"
+											"value": "<string>"
 										},
 										{
 											"key": "roomId",
-											"value": "-56708908"
+											"value": "<long>"
 										},
 										{
 											"key": "startAt",
-											"value": "1963-12-29"
+											"value": "<date>"
 										},
 										{
 											"key": "endAt",
-											"value": "1963-12-29"
+											"value": "<date>"
 										},
 										{
 											"key": "orderBy",
-											"value": "cupidatat commodo incididunt est"
+											"value": "<string>"
 										},
 										{
 											"key": "limit",
-											"value": "13218647"
+											"value": "<integer>"
 										},
 										{
 											"key": "page",
-											"value": "13218647"
+											"value": "<integer>"
 										}
 									]
 								}
@@ -1076,7 +1069,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"subject\": \"fugiat eiusmod\",\n    \"startAt\": \"2003-10-16T15:06:00.134Z\",\n    \"endAt\": \"1947-09-25T11:45:31.506Z\",\n    \"roomId\": -5624604,\n    \"employeeName\": \"minim aliqua\",\n    \"employeeEmail\": \"dolor veniam aliqua laboris\",\n    \"id\": -18615217\n  },\n  {\n    \"subject\": \"est dolor Lorem Ut\",\n    \"startAt\": \"2016-06-24T20:45:18.041Z\",\n    \"endAt\": \"2016-09-30T16:36:01.354Z\",\n    \"roomId\": 52889728,\n    \"employeeName\": \"dolor et reprehenderit\",\n    \"employeeEmail\": \"sint adipisicing sunt\",\n    \"id\": 58872779\n  }\n]"
+							"body": "[\n  {\n    \"subject\": \"ut aliquip et Excepteur cupidatat\",\n    \"startAt\": \"1957-07-09T05:09:12.934Z\",\n    \"endAt\": \"1963-01-19T00:14:04.203Z\",\n    \"roomId\": 23664024,\n    \"employeeName\": \"sint commodo consectetur\",\n    \"employeeEmail\": \"ea non\",\n    \"id\": -50740287\n  },\n  {\n    \"subject\": \"elit cupidatat dolor\",\n    \"startAt\": \"1943-05-11T00:46:32.820Z\",\n    \"endAt\": \"2012-02-28T18:37:33.674Z\",\n    \"roomId\": -80497265,\n    \"employeeName\": \"nostrud sunt\",\n    \"employeeEmail\": \"eu consequat ut\",\n    \"id\": -72652838\n  }\n]"
 						}
 					]
 				},
@@ -1088,20 +1081,22 @@
 							{
 								"description": "(Required) The API key to authenticate the request",
 								"key": "api-key",
-								"value": "cupidatat commodo incididunt est"
+								"value": "xpto"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/json",
+								"disabled": true
 							},
 							{
 								"key": "Accept",
-								"value": "application/json"
+								"value": "application/json",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"subject\": \"qui\",\n  \"startAt\": \"1993-02-27T04:51:34.356Z\",\n  \"endAt\": \"2002-11-07T00:17:35.481Z\",\n  \"roomId\": 10537030,\n  \"employeeName\": \"mollit ullamco\",\n  \"employeeEmail\": \"adipisicing in in\"\n}",
+							"raw": "{\n  \"subject\": \"Reunião B\",\n  \"startAt\": \"2024-10-12T10:00:00Z\",\n  \"endAt\": \"2024-10-12T11:00:00Z\",\n  \"roomId\": \"1\",\n  \"employeeName\": \"Jailton Araújo\",\n  \"employeeEmail\": \"jailton-nf@hotmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1109,9 +1104,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/allocations",
+							"raw": "{{serverUrl}}/allocations",
 							"host": [
-								"{{baseUrl}}"
+								"{{serverUrl}}"
 							],
 							"path": [
 								"allocations"
@@ -1127,12 +1122,12 @@
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"subject\": \"qui\",\n  \"startAt\": \"1993-02-27T04:51:34.356Z\",\n  \"endAt\": \"2002-11-07T00:17:35.481Z\",\n  \"roomId\": 10537030,\n  \"employeeName\": \"mollit ullamco\",\n  \"employeeEmail\": \"adipisicing in in\"\n}",
+									"raw": "{\n  \"subject\": \"<string>\",\n  \"startAt\": \"<dateTime>\",\n  \"endAt\": \"<dateTime>\",\n  \"roomId\": \"<long>\",\n  \"employeeName\": \"<string>\",\n  \"employeeEmail\": \"<string>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1140,12 +1135,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3306/allocations",
-									"protocol": "http",
+									"raw": "{{baseUrl}}/allocations",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3306",
 									"path": [
 										"allocations"
 									]
@@ -1161,7 +1154,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"subject\": \"Lorem\",\n  \"startAt\": \"1978-05-15T21:55:23.829Z\",\n  \"endAt\": \"2017-11-07T16:03:09.739Z\",\n  \"roomId\": -14598296,\n  \"employeeName\": \"enim\",\n  \"employeeEmail\": \"labore dolor Excepteur dolore\",\n  \"id\": 74074213\n}"
+							"body": "{\n  \"subject\": \"<string>\",\n  \"startAt\": \"<dateTime>\",\n  \"endAt\": \"<dateTime>\",\n  \"roomId\": \"<long>\",\n  \"employeeName\": \"<string>\",\n  \"employeeEmail\": \"<string>\",\n  \"id\": -19698413\n}"
 						},
 						{
 							"name": "Not Found",
@@ -1171,12 +1164,12 @@
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"subject\": \"qui\",\n  \"startAt\": \"1993-02-27T04:51:34.356Z\",\n  \"endAt\": \"2002-11-07T00:17:35.481Z\",\n  \"roomId\": 10537030,\n  \"employeeName\": \"mollit ullamco\",\n  \"employeeEmail\": \"adipisicing in in\"\n}",
+									"raw": "{\n  \"subject\": \"<string>\",\n  \"startAt\": \"<dateTime>\",\n  \"endAt\": \"<dateTime>\",\n  \"roomId\": \"<long>\",\n  \"employeeName\": \"<string>\",\n  \"employeeEmail\": \"<string>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1206,19 +1199,19 @@
 							"body": ""
 						},
 						{
-							"name": "O servidor entende o tipo de conteúdo da entidade da requisição, e a sintaxe da requisição está correta, mas não foi possível processar as instruções presentes.",
+							"name": "The server understands the content type of the request entity but was unable to process the contained instructions.",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"description": "(Required) The API key to authenticate the request",
 										"key": "api-key",
-										"value": "cupidatat commodo incididunt est"
+										"value": "<string>"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"subject\": \"qui\",\n  \"startAt\": \"1993-02-27T04:51:34.356Z\",\n  \"endAt\": \"2002-11-07T00:17:35.481Z\",\n  \"roomId\": 10537030,\n  \"employeeName\": \"mollit ullamco\",\n  \"employeeEmail\": \"adipisicing in in\"\n}",
+									"raw": "{\n  \"subject\": \"<string>\",\n  \"startAt\": \"<dateTime>\",\n  \"endAt\": \"<dateTime>\",\n  \"roomId\": \"<long>\",\n  \"employeeName\": \"<string>\",\n  \"employeeEmail\": \"<string>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1245,9 +1238,164 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"field\": \"elit eu\",\n    \"errorCode\": \"adipisicing ut\"\n  },\n  {\n    \"field\": \"dolore dolore sint ad\",\n    \"errorCode\": \"enim\"\n  }\n]"
+							"body": "[\n  {\n    \"field\": \"Excepteur laboris reprehend\",\n    \"errorCode\": \"est nisi Duis incididunt\"\n  },\n  {\n    \"field\": \"et\",\n    \"errorCode\": \"ipsum exercitation\"\n  }\n]"
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Generates the allocation report",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "(Required) The API key to authenticate the request",
+						"key": "api-key",
+						"value": "<string>"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/reports/allocation?email=<string>&dateFrom=<date>&dateTo=<date>&reportFormat=<string>",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reports",
+						"allocation"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "<string>",
+							"description": "(Required) The e-mail to send the report"
+						},
+						{
+							"key": "dateFrom",
+							"value": "<date>",
+							"description": "(Required) Start date to filter"
+						},
+						{
+							"key": "dateTo",
+							"value": "<date>",
+							"description": "(Required) End date to filter"
+						},
+						{
+							"key": "reportFormat",
+							"value": "<string>",
+							"description": "Report format. Can be 'PDF' or 'XML'. Defaults to 'PDF'"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) The API key to authenticate the request",
+								"key": "api-key",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/reports/allocation?email=<string>&dateFrom=<date>&dateTo=<date>&reportFormat=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"allocation"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "<string>"
+								},
+								{
+									"key": "dateFrom",
+									"value": "<date>"
+								},
+								{
+									"key": "dateTo",
+									"value": "<date>"
+								},
+								{
+									"key": "reportFormat",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "The server understands the content type of the request entity but was unable to process the contained instructions.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) The API key to authenticate the request",
+								"key": "api-key",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/reports/allocation?email=<string>&dateFrom=<date>&dateTo=<date>&reportFormat=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"allocation"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "<string>"
+								},
+								{
+									"key": "dateFrom",
+									"value": "<date>"
+								},
+								{
+									"key": "dateTo",
+									"value": "<date>"
+								},
+								{
+									"key": "reportFormat",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"field\": \"Excepteur laboris reprehend\",\n    \"errorCode\": \"est nisi Duis incididunt\"\n  },\n  {\n    \"field\": \"et\",\n    \"errorCode\": \"ipsum exercitation\"\n  }\n]"
 				}
 			]
 		}
@@ -1255,7 +1403,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:3306",
+			"value": "http://localhost:3000",
 			"type": "string"
 		}
 	]
