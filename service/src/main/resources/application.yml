@@ -21,7 +21,7 @@ spring:
   mail:
     host: smtp.gmail.com
     username: mateusdantas.dev@gmail.com
-    password: vnnzqpxncjypubrv
+    password: digiteasenha
     from: mateusdantas.dev@gmail.com
     properties:
       mail.transport.protocol: smtp
